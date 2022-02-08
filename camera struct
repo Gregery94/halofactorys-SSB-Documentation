@@ -21,6 +21,7 @@ camera_struct {
 	38 - u32	// if 0, current buffer not drawn
 
 	74 - ptr 	// (camera_struct >> 0x88)
+	7C - u32 skip_draw // set to 1 to skip rendering with this object 
 	8C - ptr 	// (camera_struct)
 	
 	// these change the scale/draw distance of the 3d world matrix + hud
