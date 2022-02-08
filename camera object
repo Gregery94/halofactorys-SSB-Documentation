@@ -62,5 +62,7 @@ camera_object {
 	
 	120 - ptr // (camera_struct << 0x24) idk what this is yet
 	
+	134 - ptr // (routine that runs camera duration subroutine @ 8010CECC from global camera struct. you can also replace this with the camera mode you wish to run)
+	
 	// more to be looked at and documented
 }
