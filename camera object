@@ -2,15 +2,13 @@ halofactory's SSB64 Camera Notes -
 tehzz's camera notes: https://github.com/tehzz/SSB64-Notes/blob/master/Battle/Quick%20Notes/camera%20notes.txt
 ssb remix src: https://github.com/JSsixtyfour/smashremix/blob/master/src/Camera.asm
 
-
-Hardcoded address 0x80131460 contains pointer to camera_struct. There is much to learn about it.
-Contains values related to the 3d viewport/matrix stuff
+Hardcoded address 0x80131460 contains pointer to the active camera object.
 
 // offset, data-type, notes
-camera_struct {
-	00 - u32 	// object id? = 0x03EA
-	04 - ptr  // (hud struct)
-	08 - ptr  // (bg image struct)
+camera_object {
+	00 - u32 	// object id? =0x03EA
+	04 - ptr  	// (hud struct)
+	08 - ptr  	// (bg image struct)
 	18 - ptr 	// (camera_struct >> 0x118)
 	1C - ptr 	// (camera_struct >> 0x118)
 	20 - ptr 	// (hud struct)
@@ -20,8 +18,8 @@ camera_struct {
 	34 - u32 	// draw buffer? used by 800309B0.
 	38 - u32	// if 0, current buffer not drawn
 
-	74 - ptr 	// (camera_struct >> 0x88)
-	7C - u32 skip_draw // set to 1 to skip rendering with this object 
+	74 - ptr 	// (camera_position_struct)
+	7C - u32 skip_draw // set to 1 to skip rendering with this object
 	8C - ptr 	// (camera_struct)
 	
 	// these change the scale/draw distance of the 3d world matrix + hud
