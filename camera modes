@@ -12,9 +12,9 @@ CAMERA MODES
 		 - Only focused on the active player
 		 - Used in VS Pause or any other time the camera is super close to a player
 
-	0x08 - Fixed Camera (0x8010CC74)
+	0x08 - Fixed/Boss Camera (0x8010CC74)
 		 - Cam stays frozen
-		 - Unsure where used
+		 - Used during master hand's intro 
 
 	0x0C - Tracking Camera (0x8010CB48)
 		 - Cam will pan + track its targets as if it were on a dolly.
