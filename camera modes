@@ -1,0 +1,35 @@
+CAMERA MODES 
+	@ 0x8012EBB4 is a list of subroutine pointers for the camera to use.
+	Below, I describe each camera mode
+
+	0x00 - VS Camera (0x8010C734)
+		 - Cam will only pan and zoom
+		 - Will try to keep focused on all fighters
+		 - Used in V.S. Mode 
+
+	0x04 - Close-up Camera (0x8010CAE0)
+		 - Cam matches the players x and y coordinates. 
+		 - Only focused on the active player
+		 - Used in VS Pause
+
+	0x08 - Fixed Camera (0x8010CC74)
+		 - Cam stays frozen
+		 - Unsure where used
+
+	0x0C - Tracking Camera (0x8010CB48)
+		 - Cam will pan + track its targets as if it were on a dolly.
+		 - Otherwise similar to the "VS" Camera
+		 - Unsure where used
+
+	0x10 - Long Shot Camera (0x8010CCC0)
+		 - This camera will move back and show the entire stage.
+		 - Used while paused during Bonus games (BTT/BTP) 
+
+	0x14 - Medium Shot Camera (0x8010CDAC)
+		 - This camera is moved back far enough for the player to see their objective
+		 - Cam will pan + track its target as if it were on a dolly.
+		 
+	0x18 - High-up Normal Camera (0x8010C8C4)
+		 - The Camera is positioned from a high place looking down at the players
+		 - Otherwise similar to the "VS" Camera
+		 - Used during game intro
