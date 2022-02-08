@@ -1,0 +1,104 @@
+halofactory's SSB64 Camera Notes - 
+tehzz's camera notes: https://github.com/tehzz/SSB64-Notes/blob/master/Battle/Quick%20Notes/camera%20notes.txt
+ssb remix src: https://github.com/JSsixtyfour/smashremix/blob/master/src/Camera.asm
+
+
+Hardcoded address 0x80131460 contains pointer to camera_struct. There is much to learn about it.
+Contains values related to the 3d viewport/matrix stuff
+
+// offset, data-type, notes
+camera_struct {
+	00 - u32 	// object id? = 0x03EA
+	04 - ptr  // (hud struct)
+	08 - ptr  // (bg image struct)
+	18 - ptr 	// (camera_struct >> 0x118)
+	1C - ptr 	// (camera_struct >> 0x118)
+	20 - ptr 	// (hud struct)
+	24 - ptr 	// (bg image struct)
+	2C - ptr 	// (routine seems to draw 3D world @ 0x8010D4C0)
+
+	34 - u32 	// draw buffer? used by 800309B0.
+	38 - u32	// if 0, current buffer not drawn
+
+	74 - ptr 	// (camera_struct >> 0x88)
+	8C - ptr 	// (camera_struct)
+	
+	// these change the scale/draw distance of the 3d world matrix + hud
+	90 - u16 	// draw_x_size 	(=600)
+	92 - u16 	// draw_y_size 	(=440)
+	94 - u16 	// draw_z_size 	(=511, scaling unaffected)
+	
+	// these offset where the camera viewport is drawn on screen
+	98 - u16 	// draw_x_offset 	(=640)
+	9A - u16 	// draw_y_offset 	(=480)
+	9C - u16 	// draw_z_offset 	(=511, only messes with z buffer)
+	
+	A4 - u16 	// unknown 
+	A8 - f32 	// zoom
+	AC - f32 	// horizonal FOV (radians)
+	
+	B0 - f32 	// unknown 			(=256.0, affects what gets drawn?)
+	B4 - f32 	// unknown 			(=39936.0, affects what gets drawn?)
+	B8 - f32 	// vertice_percision  (=1.0, lowering this value messes with vertex snapping)
+	BC - f32 	// ??
+	
+	// camera coordinates (I got it from the remix teams notes);
+	C4 - f32 	// x_from
+	C8 - f32 	// y_from
+	CC - f32 	// z_from
+	D0 - f32 	// x_to
+	D4 - f32 	// y_to
+	D8 - f32 	// z_to
+	
+	DC - f32 	// intitial_z_rotation (always seems to be 0.0)
+	E0 - f32 	// unknown (1.0)
+	E4 - f32 	// z_rotation_limit (while cam is tracking target. always seems to be 0.0)
+	
+	E8 - u32 	// 3d doesn't draw if toggles
+	EC - ptr 	// ( camera_struct >> 0x140)
+	
+	// There might be a better way to describe these next two;
+	108 - u32 // draw_fill (=4, setting to 2 will clear the background with the color set in the next word)
+	10C - u32 // draw_fill_color (rrggbbaa, default is null (black))
+	
+	120 - ptr // (camera_struct << 0x24) idk what this is yet
+	
+	// more to be looked at and documented
+}
+
+CAMERA MODES 
+	@ 0x8012EBB4 is a list of subroutine pointers for the camera to use.
+	Below, I describe each camera mode
+
+	0x00 - VS Camera (0x8010C734)
+		 - Cam will only pan and zoom
+		 - Will try to keep focused on all fighters
+		 - Used in V.S. Mode 
+
+	0x04 - Close-up Camera (0x8010CAE0)
+		 - Cam matches the players x and y coordinates. 
+		 - Only focused on the active player
+		 - Used in VS Pause
+
+	0x08 - Fixed Camera (0x8010CC74)
+		 - Cam stays frozen
+		 - Unsure where used
+
+	0x0C - Tracking Camera (0x8010CB48)
+		 - Cam will pan + track its targets as if it were on a dolly.
+		 - Otherwise similar to the "VS" Camera
+		 - Unsure where used
+
+	0x10 - Long Shot Camera (0x8010CCC0)
+		 - This camera will move back and show the entire stage.
+		 - Used while paused during Bonus games (BTT/BTP) 
+
+	0x14 - Medium Shot Camera (0x8010CDAC)
+		 - This camera is moved back far enough for the player to see their objective
+		 - Cam will pan + track its target as if it were on a dolly.
+		 
+	0x18 - High-up Normal Camera (0x8010C8C4)
+		 - The Camera is positioned from a high place looking down at the players
+		 - Otherwise similar to the "VS" Camera
+		 - Used during game intro
+
