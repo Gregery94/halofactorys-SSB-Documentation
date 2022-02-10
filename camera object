@@ -38,7 +38,7 @@ camera_object {
 	
 	B0 - f32 	// unknown 			(=256.0, affects what gets drawn?)
 	B4 - f32 	// unknown 			(=39936.0, affects what gets drawn?)
-	B8 - f32 	// vertice_percision  (=1.0, lowering this value messes with vertex snapping)
+	B8 - f32 	// vertex_precision  		(=1.0, lowering this value affects vertex snapping)
 	BC - f32 	// ??
 	
 	// camera coordinates (I got it from the remix teams notes);
