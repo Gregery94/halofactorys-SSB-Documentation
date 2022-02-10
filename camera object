@@ -49,9 +49,10 @@ camera_object {
 	D4 - f32 	// y_to
 	D8 - f32 	// z_to
 	
-	DC - f32 	// intitial_z_rotation (always seems to be 0.0)
-	E0 - f32 	// unknown (1.0)
-	E4 - f32 	// z_rotation_limit (while cam is tracking target. always seems to be 0.0)
+	// camera roll is determined here.
+	DC - f32 	// z_rotation_intial (=0.0. takes values between -512 and 512. either adding or subtracting 90 degrees)
+	E0 - f32 	// z_rotation_sign ? (adds 180 degrees if sign of value = -1.)
+	E4 - f32 	// z_rotation_camera_limit (always=0? sets upper limit of additive camera rotation when players are moving)
 	
 	E8 - u32 	// 3d doesn't draw if toggles
 	EC - ptr 	// ( camera_struct >> 0x140)
