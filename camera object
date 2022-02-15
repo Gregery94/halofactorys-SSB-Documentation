@@ -2,9 +2,8 @@ halofactory's SSB64 Camera Notes -
 tehzz's camera notes: https://github.com/tehzz/SSB64-Notes/blob/master/Battle/Quick%20Notes/camera%20notes.txt
 ssb remix src: https://github.com/JSsixtyfour/smashremix/blob/master/src/Camera.asm
 
-Hardcoded address 0x80131460 contains pointer to the active camera object.
+Address 0x80131460 contains pointer to the active camera_object.
 
-// offset, data-type, notes
 camera_object {
 	00 - u32 	// object id? =0x03EA
 	04 - ptr  	// (hud struct)
@@ -67,3 +66,10 @@ camera_object {
 	
 	// more to be looked at and documented
 }
+
+Multiple camera objects may exist at the same time.
+make 2 cams:
+1. set break point at 0x8010DB1C
+2. load a stage
+3. when hit, set PC to 0x8010DB00 and continue
+4. you will both camera_objects beside eachother. You can resize the viewports and assign different camera subroutines to them as well.
