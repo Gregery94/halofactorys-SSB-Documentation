@@ -4,3 +4,6 @@ prevent v.s. pause cam from zooming out if the paused player is out of bounds
 psx vertex snapping (makes 3d geometry/ camera less precise)
 8012EB88 0038
 8012EB89 0000
+
+drunk mode (just 0x3E in vertex transform)
+8003B78F 000F
