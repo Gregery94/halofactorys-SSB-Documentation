@@ -1,0 +1,6 @@
+prevent v.s. pause cam from zooming out if the paused player is out of bounds
+8010CAD7 0000
+
+psx vertex snapping (makes 3d geometry/ camera less precise)
+8012EB88 0038
+8012EB89 0000
