@@ -23,7 +23,14 @@ CAMERA MODES
 
 	0x10 - Long Shot Camera (0x8010CCC0)
 		 - This camera will move back and show the entire stage.
-		 - Used while paused during Bonus games (BTT/BTP) 
+		 - Only used while paused during Bonus games (BTT/BTP) 
+		 - camera coordinates are retrieved from 0x80218AB0 + offsets below. Unsure where the values come from yet.
+		 	0x9A 	focal_x
+			0x9C 	focal_y
+			0x9E 	focal_z
+			0xA0	x
+			0xA2 	y
+			0xA4 	z
 
 	0x14 - Medium Shot Camera (0x8010CDAC)
 		 - This camera is moved back far enough for the player to see their objective
