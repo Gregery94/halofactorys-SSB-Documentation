@@ -10,8 +10,8 @@ CAMERA
   drunk mode (just 0x3E in vertex transform)
   8003B78F 000F
   
-MISC
-  hammer time
+MISC 
+  hammer time (unstable)
   8013E1E4 0000
   8013E1E5 0000
   8013E1E6 0000
