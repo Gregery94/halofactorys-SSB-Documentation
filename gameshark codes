@@ -11,6 +11,13 @@ CAMERA
   8003B78F 000F
   
 MISC 
+  Fox's crappy reflector (always breaks)
+  810E320C 0000
+  810E320E 0000
+
+
+
+UNSTABLE
   hammer time (unstable)
   8013E1E4 0000
   8013E1E5 0000
