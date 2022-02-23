@@ -4,82 +4,82 @@
 	
 	// @ 0x800E52B8
 	_check_reflect_flag:		
-	beqzl	s0, _end			    // skip to end if projectile is too far away
+	beqzl	s0, _end			// skip to end if projectile is too far away
 	lw		t9, 0x00B4(sp)		// ~
 	
 	// if here, projectile is near defender
 	lw		t9, 0x018C(s7)		// t1 = defending player special flag (04000010 = fox reflecting)
-	sll		t1, t9, 5			    // t1 = 0x82001A00
+	sll		t1, t9, 5			// t1 = 0x82001A00
 	bgezl	t1, _skip_reflect	// skip if t1 = 0
 	lb 		t1, 0x018D(s7) 		// ~
 	
 	// check projectile flag
-	lw 		t2, 0x0048(s6)		  // t2 = projectile flag
-	sll		t4, t2, 5			      // t4 = the same flag but bigger
-	bgezl	t4, _skip_reflect	  // skip if flag isn't 0
-	lb 		t1, 0x018D(s7) 		  // ~
+	lw 		t2, 0x0048(s6)		// t2 = projectile flag
+	sll		t4, t2, 5			// t4 = the same flag but bigger
+	bgezl	t4, _skip_reflect	// skip if flag isn't 0
+	lb 		t1, 0x018D(s7) 		// ~
 	
 	// if here, then projectile passes the initial reflect checks
-	lw 		t5, 0x0050(s6)		  // t5 = hitbox_active flag from projectile stats table
-	li 		s5, 0x801311A0		  // s5 = hardcoded ptr to an array used for temp values when calculating damage
-	blez	t5, 0x800E5354		  // @0x800E52EC - branch if projectile's hitbox is not active
-	or		s4,	r0, r0			    // s4 = 0
+	lw 		t5, 0x0050(s6)		// t5 = hitbox_active flag from projectile stats table
+	li 		s5, 0x801311A0		// s5 = hardcoded ptr to an array used for temp values when calculating damage
+	blez	t5, 0x800E5354		// @0x800E52EC - branch if projectile's hitbox is not active
+	or		s4,	r0, r0			// s4 = 0
 	
 	// @ 0x800E52F4
 	_collide_check_initial:		
-	lw 		t8, 0x0000(s5)		  // t8 = global flag to see if projectile is near an opponent
-	or 		a0, s6, r0			    // a0 = s6 (projectile stats table)
-	or		a1, s4, r0			    // a1 = 0?
+	lw 		t8, 0x0000(s5)		// t8 = global flag to see if projectile is near an opponent
+	or 		a0, s6, r0			// a0 = s6 (projectile stats table)
+	or		a1, s4, r0			// a1 = 0?
 	bnez	t8, _check_collision// branch to 0x800E5314 if projectile is near opponent
-	or		a2, s7, r0			    // a2 = defending player struct
+	or		a2, s7, r0			// a2 = defending player struct
 	
 	// exits function. If here idk.
-	lw		t7, 0x0088(sp)		  // ?
-	b		_exit_reflect		      // ?
-	lw		v0, 0x0050(t7)		  // ?
+	lw		t7, 0x0088(sp)		// ?
+	b		_exit_reflect		// ?
+	lw		v0, 0x0050(t7)		// ?
 	
 	b		a0, fp, r0
 	lw		a1, s6, r0
 	
-	_check_collision:	        // @ 0x800E5314, checks against defender
-	jal 	0x800EFFCC 			    // subroutine checks if player was hit by projectile TODO: check it out
-	lw		a3, 0x850(s7)		    // a3 = 0x802FBD90, projectile array for hitbox/display ?
+	_check_collision:	// @ 0x800E5314, checks against defender
+	jal 	0x800EFFCC 			// subroutine checks if player was hit by projectile TODO: check it out
+	lw		a3, 0x850(s7)		// a3 = 0x802FBD90, projectile array for hitbox/display ?
 	beqzl	v0, _failed_collide	// if no collision, branch to 0x800E5340
-	lw		t9, 0x0088(sp)		  // t9 = projectile stats table
+	lw		t9, 0x0088(sp)		// t9 = projectile stats table
 	
 	// if here, reflecting player was hit
-	or		a0, fp, r0			    // a0 = projectile special struct
-	or		a1, s6, r0			    // a1 = projectile stats struct (special_struct + 0x100)
-	or		a2, s7, r0			    // a2 = defending player struct
-	jal		0x800E31B4			    // @ 0x800E5330 - initial reflect routine. sets 0x18C in fox's struct to 0x07.
-	lw		a3, 0x00B8(sp)		  // a3 = player object struct
+	or		a0, fp, r0			// a0 = projectile special struct
+	or		a1, s6, r0			// a1 = projectile stats struct (special_struct + 0x100)
+	or		a2, s7, r0			// a2 = defending player struct
+	jal		0x800E31B4			// @ 0x800E5330 - initial reflect routine. sets 0x18C in fox's struct to 0x07.
+	lw		a3, 0x00B8(sp)		// a3 = player object struct
 	
-	b		_skip_collision		    //
-	lw		t9, 0x00B4(sp)		  //
+	b		_skip_collision		//
+	lw		t9, 0x00B4(sp)		//
 	
 	_failed_collide:
-	lw		v0, 0x0050(t9)		  //
-	addiu	s4, s4, 0x0001 		  //
-	slt		at, s4, v0			    //
+	lw		v0, 0x0050(t9)		//
+	addiu	s4, s4, 0x0001 		//
+	slt		at, s4, v0			//
 	bnez	at, _skip_collision	//
 	
 	( THERE IS A LOT OF OTHER STUFF HERE SEEMINGLY SKIPPED  )
 	
 	// @ 0x800E558C
 	_skip_reflect:
-	addiu	s4, s4 0x0001		    //
-	slt		at, s4, v0			    //
-	bnez 	at, 0x800E54E8		  // go back up if not 0
-	addiu	s5, s5 0x0004		    //
-  lw		t9, 0x00B4(sp)		  //
+	addiu	s4, s4 0x0001		//
+	slt		at, s4, v0			//
+	bnez 	at, 0x800E54E8		// go back up if not 0
+	addiu	s5, s5 0x0004		//
+	lw		t9, 0x00B4(sp)		//
 
 	_skip_collision:
-	lw		v0, 0x0050(t9)		  // ?
+	lw		v0, 0x0050(t9)		// ?
 	
 	_end:
-	lw		t6, 0x0004(t9)		  // load next projectile
-	bnez	t6, 0x800E4F18		  // redo function if there is another projectile.
-	sw		t6, 0x00B4(sp)		  // save to sp
+	lw		t6, 0x0004(t9)		// load next projectile
+	bnez	t6, 0x800E4F18		// redo function if there is another projectile.
+	sw		t6, 0x00B4(sp)		// save to sp
 	
 	// restore 10 registers
 	~
