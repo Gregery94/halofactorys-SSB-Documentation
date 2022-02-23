@@ -1,9 +1,20 @@
-prevent v.s. pause cam from zooming out if the paused player is out of bounds
-8010CAD7 0000
+CAMERA
+  prevent v.s. pause cam from zooming out if the paused player is out of bounds
+  8010CAD7 0000
 
-psx vertex snapping (makes 3d geometry/ camera less precise)
-8012EB88 0038
-8012EB89 0000
+3D
+  psx vertex snapping (makes 3d geometry/ camera less precise)
+  8012EB88 0038
+  8012EB89 0000
 
-drunk mode (just 0x3E in vertex transform)
-8003B78F 000F
+  drunk mode (just 0x3E in vertex transform)
+  8003B78F 000F
+  
+MISC
+  hammer time
+  8013E1E4 0000
+  8013E1E5 0000
+  8013E1E6 0000
+  8013E1E8 0000
+  
+  
