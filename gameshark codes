@@ -10,6 +10,10 @@ CAMERA
   drunk mode (just 0x3E in vertex transform)
   8003B78F 000F
   
+2D EFFECTS
+  disable smoke effects and other particles
+  801313C7 0000
+ 
 MISC 
   Fox's crappy reflector (always breaks)
   810E320C 0000
