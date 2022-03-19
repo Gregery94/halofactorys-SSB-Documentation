@@ -42,3 +42,9 @@
 			48 - 00E7		// start of micro code https://wiki.cloudmodding.com/oot/F3DZEX2
 			7E - FFFF		// when set to 0 less geometry is drawn
 			124 - int 0-4	// probably related to frame buffer
+
+
+@ 0x8003BB00
+	this value seems to affect global zoom 
+	
+	0x8003CB34 = global buffer value?
