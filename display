@@ -1,47 +1,49 @@
-			// vertex transform array 0x8003B750 (RSP stuff?)
-			00 - ptr 8018E144	// associated subroutine
-			04 - 00000000		  // null
+RDP command that effects antialiasing @ 8003B828
 
-			// each value is utilized by rdp while rendering the 3d world
-			// the calculations are my best guess, may be wrong. Most of the values are 0 and skew the world when set to 1 or FFFF
-			08 - 0001		// x *= value;
-			0A - 0000		// x -= y * value
-			0C - 0000		// z = x * value
-			0E - 0000		// if (value > 0) x = 0 	// probably wrong
-			10 - 0000		// x += y * value
-			12 - 0001		// y = y * value
-			14 - 0000		// z += x * value
-			16 - 0000		// unknown transform
-			18 - 0000		// x += z * value
-			1A - 0000 		// y += z * value
-			1C - 0001		// z *= value
-			1E - 0000		// unknown transform
+// vertex transform array @ 0x8003B750
+00 - ptr 8018E144	// associated subroutine
+04 - 00000000		  // null
 
-			20 - 0000		// x += value
-			22 - 0000		// y += value
-			24 - 0000		// z += value
-			26 - 0001		// unknown, scales all
-			28 - 0000		// x += x + value 			// unsure, stretches x when FFFF
-			2A - 0000		// y += x + value 			// unsure
-			2C - 0000		// z += x + value 			// unsure
-			2E - 0000		// xyz += x * value			// unsure
+// each value is utilized by rdp while rendering the 3d world
+// the calculations are my best guess, may be wrong. Most of the values are 0 and skew the world when set to 1 or FFFF
+08 - 0001		// x *= value;
+0A - 0000		// x -= y * value
+0C - 0000		// z = x * value
+0E - 0000		// if (value > 0) x = 0 	// probably wrong
+10 - 0000		// x += y * value
+12 - 0001		// y = y * value
+14 - 0000		// z += x * value
+16 - 0000		// unknown transform
+18 - 0000		// x += z * value
+1A - 0000 		// y += z * value
+1C - 0001		// z *= value
+1E - 0000		// unknown transform
 
-			30 - 0000		// x += sign(y) * value		// seems right
-			32 - 0000		// y += sign(y) * value		// seems right
-			34 - 0000		// z += sign(y) * value		// seems right
-			36 - 0000		// xyz += sign(x) * value	// seems right
-			38 - 0000		// x += sign(z) * value		// seems right
-			3A - 0000		// y += sign(z) * value		// seems right
-			3C - 0000		// z += sign(z) * value		// seems right
-			3E - 0000		// yz -= sign(z) * value	// seems right
+20 - 0000		// x += value
+22 - 0000		// y += value
+24 - 0000		// z += value
+26 - 0001		// unknown, scales all
+28 - 0000		// x += x + value 			// unsure, stretches x when FFFF
+2A - 0000		// y += x + value 			// unsure
+2C - 0000		// z += x + value 			// unsure
+2E - 0000		// xyz += x * value			// unsure
 
-			40 - 0000		// null
-			44 - 0000		// null
-			46 - 0000		// unknown, scales all
+30 - 0000		// x += sign(y) * value		// seems right
+32 - 0000		// y += sign(y) * value		// seems right
+34 - 0000		// z += sign(y) * value		// seems right
+36 - 0000		// xyz += sign(x) * value	// seems right
+38 - 0000		// x += sign(z) * value		// seems right
+3A - 0000		// y += sign(z) * value		// seems right
+3C - 0000		// z += sign(z) * value		// seems right
+3E - 0000		// yz -= sign(z) * value	// seems right
 
-			48 - 00E7		// start of micro code https://wiki.cloudmodding.com/oot/F3DZEX2
-			7E - FFFF		// when set to 0 less geometry is drawn
-			124 - int 0-4	// probably related to frame buffer
+40 - 0000		// null
+44 - 0000		// null
+46 - 0000		// unknown, scales all
+
+48 - 00E7		// start of micro code https://wiki.cloudmodding.com/oot/F3DZEX2
+7E - FFFF		// when set to 0 less geometry is drawn
+124 - int 0-4	// probably related to frame buffer
 
 
 @ 0x8003BB00
