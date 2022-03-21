@@ -1,5 +1,7 @@
 RDP command that effects antialiasing @ 8003B828 (debug menu)
 
+// this function handles the current DL being processed? 0x80004AB0
+
 // vertex transform array @ 0x8003B750
 00 - ptr 8018E144	// associated subroutine
 04 - 00000000		  // null
