@@ -1,4 +1,4 @@
-RDP command that effects antialiasing @ 8003B828
+RDP command that effects antialiasing @ 8003B828 (debug menu)
 
 // vertex transform array @ 0x8003B750
 00 - ptr 8018E144	// associated subroutine
