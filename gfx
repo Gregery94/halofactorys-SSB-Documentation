@@ -1,1 +1,83 @@
 0x800CE724 reads graphics instructions
+// I forget what for
+---
+
+// 2D GFX routines
+// may be more
+
+800ff048 smoke puff
+800FF278 smoke dash
+800FF384 ?
+800FF3F4 smoke dash 2
+800FF590 large smoke puff
+800FF648 smoke
+800FF7D8 large dash
+800FF8C0 ?
+800FF95C ?
+800FFAB8 frequent balls
+800FFB38 balls
+800FFB74 ?
+800FFCA4 ?
+800FFD58 ground explode
+800FFE04 ?
+800FFEA4 little sparkly thing
+800FFF74 ?
+80100030 ?
+801001A8 bigger sparkly thing
+80100218 intermittent sparkly thing
+80100258 ?
+801003D0 smoke explode?
+80100440 intermittent smoke explode
+80100480 explode
+80100524 intense explode
+801005C8 shining explode
+8010066C very shining explode (unstable)
+80100720 ?
+801007D8 ?
+801008B8 ?
+801008F4 ?
+80100A58 ?
+80100ACC coin
+80100BF0 expanding circle
+80100DEC ?
+80100E84 ?
+80100ED4 ?
+80100FA4 ?
+80101024 ?
+80101108 ?
+80101180 ?
+80101374 ?
+80101408 lightning strike
+801014A8 big expaning circle
+80101500 yellow swirl
+8010155C big dash
+801015D4 small spark
+80101630 yellow spark
+80101688 lime circle expanding
+801016E0 lime circle expanding  2
+80101738 lime circle expanding  3
+80101790 big white spark
+801017E8 ?
+8010183C ?
+801018A8 ?
+80101A08 ?
+80101AB4 ?
+80101B88 ?
+80101C34 ?
+80101CA0 ?
+80101D34 kirby punch attack rush
+80101E80 ?
+80101ED8 ?
+80101F84 ?
+80102018 stars
+80102070 even more stars
+801020F4 ?
+801021C0 ?
+801023D4 ?
+80102418 ?
+80102490 ?
+80102508 ?
+80102560 ?
+801025D8 ?
+80102630 ?
+80102774 ?
