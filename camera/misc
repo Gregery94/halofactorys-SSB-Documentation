@@ -1,2 +1,13 @@
 fov float @ 0x8010C754 (asm)
 LUI	AT, 0x4218        // change to play with fov
+
+-----------------------------------------------------------------------
+bonus camera
+  8010CE0C clamps camera within stage 		            jal 8010C70C
+  8010CE2C sets camera x and y						            jal 8010C55C
+  8010CE58 sets vertical angle						            jal 800C7840
+  8010CE68 affects camera z							              jal 800C78B8
+  8010CE74 adjusts camera x (keeps player in middle)	jal 800C7840
+  8010CE88 affects camera z							              jal 800C78B8
+  -----------------------------------------------------------------------
+  
