@@ -1,9 +1,7 @@
 0x800CE724 reads graphics instructions
-// I forget what for
----
+-------------------
 
-// 2D GFX routines
-// may be more
+// These routines create different graphics
 
 800ff048 smoke puff
 800FF278 smoke dash
