@@ -6,7 +6,7 @@ RDP command that effects antialiasing @ 8003B828 (debug menu)
 00 - ptr 8018E144	// associated subroutine
 04 - 00000000		  // null
 
-// each value is utilized by rdp while rendering the 3d world
+// The values below affect rendering of the 3d world (vertices)
 // the calculations are my best guess, may be wrong. Most of the values are 0 and skew the world when set to 1 or FFFF
 08 - 0001		// x *= value;
 0A - 0000		// x -= y * value
