@@ -2,7 +2,7 @@ halofactory's SSB64 Camera Notes -
 tehzz's camera notes: https://github.com/tehzz/SSB64-Notes/blob/master/Battle/Quick%20Notes/camera%20notes.txt
 ssb remix src: https://github.com/JSsixtyfour/smashremix/blob/master/src/Camera.asm
 
-Address 0x80131460 contains pointer to the active camera_object.
+Address 0x80131460 contains pointer to the active camera_object. (0x8013A150 for PAL version)
 
 camera_object {
 	00 - u32 	// object id? =0x03EA
