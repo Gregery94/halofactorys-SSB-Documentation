@@ -24,16 +24,16 @@ camera_object {
 	// these change the scale/draw distance of the 3d world matrix + hud
 	90 - u16 	// draw_x_size 	(=600)
 	92 - u16 	// draw_y_size 	(=440)
-	94 - u16 	// draw_z_size 	(=511, scaling unaffected)
+	94 - unused
 	
 	// these offset where the camera viewport is drawn on screen
 	98 - u16 	// draw_x_offset 	(=640)
 	9A - u16 	// draw_y_offset 	(=480)
-	9C - u16 	// draw_z_offset 	(=511, only messes with z buffer)
+	9C - unused
 	
 	A4 - u16 	// unknown 
 	A8 - f32 	// zoom
-	AC - f32 	// horizonal FOV (radians)
+	AC - f32 	// horizonal stretch (radians?) I think it is written to 0x80046FA0
 	
 	B0 - f32 	// unknown 			(=256.0, affects what gets drawn?)
 	B4 - f32 	// unknown 			(=39936.0, affects what gets drawn?)
