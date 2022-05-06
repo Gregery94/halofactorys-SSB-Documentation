@@ -1,27 +1,28 @@
-CAMERA MODES 
-	@ 0x8012EBB4 is a list of subroutine pointers for the camera to use.
-	Below, I describe each camera mode
+POINTER TO CAMERA SUBROUTINES
+ JPN - 0x 8012C764
+ USA 0x8012EBB4
 
-	0x00 - VS Camera (0x8010C734)
+Below each camera subroutine is  described.
+	0x00 - VS Camera (0x8010C734, USA)
 		 - Cam will only pan and zoom
 		 - Will try to keep focused on all fighters
 		 - Used in V.S. Mode 
 
-	0x04 - Close-up Camera (0x8010CAE0)
+	0x04 - Close-up Camera (0x8010CAE0, USA)
 		 - Cam matches the players x and y coordinates and zooms in close 
 		 - Only focused on the active player
 		 - Used in VS Pause or any other time the camera is super close to a player
 
-	0x08 - Fixed/Boss Camera (0x8010CC74)
+	0x08 - Fixed/Boss Camera (0x8010CC74, USA)
 		 - Cam stays frozen
 		 - Used during master hand's intro 
 
-	0x0C - Tracking Camera (0x8010CB48)
+	0x0C - Tracking Camera (0x8010CB48, USA)
 		 - Cam will pan + track its targets as if it were on a dolly.
 		 - Otherwise similar to the "VS" Camera
 		 - Unsure where used
 
-	0x10 - Long Shot Camera (0x8010CCC0)
+	0x10 - Long Shot Camera (0x8010CCC0, USA)
 		 - This camera will move back and show the entire stage.
 		 - Only used while paused during Bonus games (BTT/BTP) 
 		 - camera coordinates are retrieved from 0x80218AB0 + offsets below. Unsure where the values come from yet.
@@ -32,11 +33,11 @@ CAMERA MODES
 			0xA2 	y
 			0xA4 	z
 
-	0x14 - Medium Shot Camera (0x8010CDAC)
+	0x14 - Medium Shot Camera (0x8010CDAC, USA)
 		 - This camera is moved back far enough for the player to see their objective
 		 - Cam will pan + track its target as if it were on a dolly.
 		 
-	0x18 - High-up Normal Camera (0x8010C8C4)
+	0x18 - Planet Zebes Camera (0x8010C8C4, USA)
 		 - The Camera is positioned from a high place looking down at the players
-		 - Otherwise similar to the "VS" Camera
+		 - Possibly used for screen shake effect
 		 - Used on planet Zebes stage
