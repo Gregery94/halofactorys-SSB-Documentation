@@ -5,6 +5,8 @@ display command that effects antialiasing @ 8003B828 (debug menu)
 // 80017B80 may handle 3d drawing in general 
 
 
+CSS screen object ptr = 0x80046730
+
 // vertex transform array @ 0x8003B750
 00 - ptr 8018E144	// associated subroutine
 04 - 00000000		  // null
