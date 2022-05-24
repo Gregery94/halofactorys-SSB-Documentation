@@ -1,0 +1,21 @@
+0x8013369C - Change character on Characters Screen
+	0x801336AC - set series logo
+	0x801336CC - set character name 
+	0x801336EC - set character description 
+	0x8013370C - set game works 
+	0x8013372C - set model 
+
+Values seem to be pulled from table @ 0x80136250
+
+Character Entry Table
+0x00 - character id list[index_count]         // mario, luigi, dk etc
+0x30 - unknown list[index_count]              // unknown, looks like more character ids
+0x60 - biography_offset[index_count]          // offset to image + 0x30 in 0x10
+0x90 - series_logo_offset[index_count]        // offset in file 0x23
+0xC0 - unknown values                         // Mario bros are 0x00
+0xF0 - unknown values                         // Mario bros are 0xA14
+0x120 - name_coordinates[(x,y) * index_count] // x and y coordinates stored as f32 values
+0x180 - name_offset[index_count]              // offset to image + 0x10 in file 0x10
+0x1B0 - works_offset[index_count]             // offset to image + 0x10 in file 0x10
+0x1E0 - unknown pointers                      // Marios points to 0x801340B0
+0x210 - special_move_image_offsets[button_image, name_image]  // example "B " + " fireball"
