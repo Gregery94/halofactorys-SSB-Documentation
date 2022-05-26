@@ -1,0 +1,88 @@
+write the following values to 0x80131A40 and it will apply the blend colour in the same way the screen flashes white when a player is KO'd
+(careful, some of these flash quickly)
+
+8012CA90 - constant white lens
+8012CAA4 - ? 
+8012CAAC - WARNING - transparent white flashing fast
+8012CAD0 - CAUTION - transparent green flashing
+8012CAF4 - white and slowish fade to clear
+8012CB20 - ? crash
+8012CB60 - quick, black flash (my fav)
+8012CB7C - ? crash
+8012CB9C - ? crash
+8012CBDC - WARNING fast, constant white pulse
+8012CC10 - constant white pulse
+8012CC80 - ? crash
+8012CCC4 - ? crash
+8012CD08 - ? crash
+8012CD4C - ? crash
+8012CDB4 - ? crash
+8012CDD8 - ? crash
+8012CDFC - ? crash
+8012CE20 - ? crash
+8012CE70 - ? crash
+8012CEB4 - ? crash
+8012CEF8 - ? crash
+8012CF3C - ? crash
+8012D0EC - ? crash
+8012D130 - ? crash
+8012D174 - ? crash
+8012D1B8 - ? crash
+8012CFAC - ? crash
+8012CFF0 - ? crash
+8012D034 - ? crash
+8012D078 - ? crash
+8012D1FC - blue, white, clear
+8012D218 - ?
+8012D21C - ?
+8012D220 - ?
+8012D224 - orange pulse
+8012D24C - red pulse
+8012D278 - pink pulse
+8012D2A8 - quick red
+8012D2D4 - fox dsp
+8012D3B8 - fox dsp
+8012D3D8 - ?
+8012D454 - yellow to red to normal
+8012D480 - fade to orange then crash
+8012D380 - ness absorb?
+8012D35C - ?
+8012D360 - one quick yellow pulse
+8012D310 - one faded yellow pulse
+8012D338 - one yellow pulse
+8012D4B4 - explosion flash?
+8012D504 - respawn white flash
+8012D52C - invulnerable white flash
+8012D554 - white 
+8012D57C - brown fade in/out
+8012D5F8 - brown pulse
+8012D674 - white then cool blue, crash
+8012D6AC - pikachu up special
+8012D6D0
+8012D6EC - fast white flash then crash
+8012D734 - fast blue flash then crash
+8012D78C - WARNING - white flashing
+8012D7B4
+8012D7E0 - flashing green/white
+8012D800 - fast cyan
+8012D834
+8012D86C
+8012D8CC - fade from black
+8012D8EC - set to transparent black
+8012D904 - ? crash
+8012D920 - ? crash
+8012D940 - slow fade to red
+8012D968 - fast fade from red
+8012D9B8 - WARNING, green red flash
+8012D9E0 - white flash (crashes)
+8012DA70 
+8012DA8C - ? crashed
+8012DAC8 - slow red yellow flash
+8012DAF8 - WARNING, (fast red yellow flash)
+8012DB18 - alternate red yellow flash
+8012D9A0 - set to black
+8012DB48 - KO
+8012DB70 - damage
+8012DB88
+8012DBA0 - icy blue
+8012DBB8 - icy blue 2
