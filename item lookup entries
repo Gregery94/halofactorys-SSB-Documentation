@@ -1,0 +1,111 @@
+Example: StarRod Item entry in 0xFB (offset = 0x48C)
+80264890  00000000  00000000  00000000	< ptrs x4 in ram
+18000000  00000000  00000000  00000000
+00000000  003C003C  003C00C3  0000FF3D
+005A00C8  00046060  0000184A  27050400
+0E4390E4  3200006E  80265188  00000000
+
+
+0x10 - bitflags[8] 	// StarRod = [ 0001 1000 ]
+1000 0000	// unknown, crashes
+0100 0000 	// affects rotation of rooms
+0010 0000	// makes the tip transparent
+0001 0000 	// create gfx on collide
+0000 1000 	// hold type (0 = light, 1 = heavy/crate )
+0000 0100 	// ? - intangible to players (thrown)
+0000 0010   // ? - intangible to players (thrown)
+0000 0001 	// ? - intangible to players (thrown)
+
+0x11 - u8 -  hurt-box x offset	 		// StarRod = 0x00
+
+0x12 - u16 - ? - did not affect hurtbox x
+0x14 - u16 - thrown hurtbox y offset
+0x16 - u16 - thrown hurtbox z offset
+
+0x18 - u16 - ? 0x12C in item struct		// = 0 not read?
+0x1A - u16 - ? 0x130 in item struct		// = 0 not read?
+0x1C - u16 - ? 0x134 in item struct		// = 0 not read?
+
+0x1E - u16 - hitbox x offset			// = 0
+0x20 - u16 - hitbox y offset			// = 0
+0x22 - u16 - hitbox z offset			// = 0
+
+0x24 - u16 - hitbox x scale			// = 0x3C (60.0)
+0x26 - u16 - hitbox y scale			// = 0x3C (60.0)
+0x28 - u16 - hitbox z scale			// = 0x3C (60.0)
+0x2A - u16 - pickup arrow y offset        // = 0xC3 (195.0)
+
+0x2C - u16 - ECB bottom				// = 0
+0x2E - u16 - ECB top				// = 0xFF3D
+0x30 - u16 - ECB x size				// = 0x5A
+0x32 - u16 - hurtbox size multiplier	// = 4
+
+0x34 - u8 - ?					// = 0
+0x35 - u8 - knockback amount 1		// = 4
+0x36 - u8 - damage amount 1			// = 96
+0x37 - u8 - damage amount 2			// = 96
+0x38 - u8 - knockback amount 2		// = 0
+0x39 - ?
+
+0x3A - unknown_bitflags[4] 			// Star Rod: [0100]
+1000 0000					// ? 0
+0100 0000 					// ? 0
+0010 0000					// ? 0
+0001 0000 					// 1 = hurtbox enabled
+
+
+0x3A.5 = hurtbox FGM				// (uses logical shifts, see 
+							//  0x8016E360)
+
+
+0x3C - bitflags[32]
+StarRod
+0010 0111 0000 0101 	< nothing happened when changed?
+0000 0100 0000 0000	< this row changes stuff.
+-------------------
+
+destroy on pick up (tomato/heart only)
+-------------------
+0000 0000 0000 0000 	// also effects if player can smash attack
+0001 0000 0000 0000     //
+
+
+on A button pressed
+-------------------
+0000 0000 0000 0000 	// 00 = normal action, 01 = smash attack
+0000 1100 0000 0000 	// 10 = shoot projectile, 11 = throw
+
+
+default hitbox
+-------------------	// 00 = none, 01 = enabled
+0000 0000 0000 0000 	// 10 = invulnerable
+0000 0000 0011 0000 	// 11 = intangible
+
+I wasn't sure about all the flags for 0x3C
+0x3C flags but for each item:
+tomato/heart 		37001400
+star				30001000
+bumper/shells		2F000C00
+fan				27118400	
+pokeball/linkbomb 	270F0C00
+beamsword/bat		270F0400
+fireflower			27078800
+bobomb			27078C00
+star rod			27050400
+motionbomb			27028C00	// 0x8C allows throw with "R"
+raygun			27028800
+hammer			25079400
+
+(+ other items)
+target			3F029840	// 0x40 allows damage to it
+onix				310F1800
+RTTF bomb			23169840
+
+	
+0x40 - drop FGM sound (uses logical shifts, see 0x8016E360)
+0x42 - throw FGM sound (^)
+
+0x44 - u16 - air speed (throw speed?)
+0x46 - u16 - rotation speed (on spawn, throw)
+
+0x48 - ptr - display list
