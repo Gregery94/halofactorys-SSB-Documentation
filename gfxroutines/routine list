@@ -9,79 +9,79 @@ command, routine, priority, description
 0x1C - 8012CB60 - 0x3C01	- USP free fall
 0x20 - 8012CB7C - 0x3C01	- fast fall
 0x24 - 8012CB9C - 0x0F  	- heal
-0x28 - 8012CBDC - 			- bounce on wall, leave spawn platform
-0x2C - 8012CC10 - 			- spawn, white pulse
-0x30 - 8012CC80 - 			- fire weakest (flower)
-0x34 - 8012CCC4 - 			- fire weak (samus bomb)
-0x38 - 8012CD08 - 			- fire 3
-0x3C - 8012CD4C - 			- fire strong (flower thrown)
-0x40 - 8012CDB4 - 			- electric 1
-0x44 - 8012CDD8 - 			- electric 2
-0x48 - 8012CDFC - 			- electric 3
-0x4C - 8012CE20 - 			- electric 4
-0x50 - 8012CE70 - 			- electric skeleton weakest
-0x54 - 8012CEB4 - 			- electric skeleton weak
-0x58 - 8012CEF8 - 			- electric skeleton med
-0x5C - 8012CF3C - 			- electric skeleton strong
-0x60 - 8012D0EC - 			- electric 5
-0x64 - 8012D130 - 			- electric skeleton 5
-0x68 - 8012D174 - 			- electric skeleton 6
-0x6C - 8012D1B8 - 			- electric skeleton 7
-0x70 - 8012CFAC - 			- electric skeleton 5
-0x74 - 8012CFF0 - 			- electric skeleton 6
-0x78 - 8012D034 - 			- electric skeleton 7
-0x7C - 8012D078 - 			- electric skeleton 8
-0x80 - 8012D1FC - 			- overlay blue, then white, clear
-0x84 - 8012D218 - 			- ? nothing 1
-0x88 - 8012D21C - 			- ? nothing 2
-0x8C - 8012D220 - 			- ? nothing 3
-0x90 - 8012D224 - 			- shield break
-0x94 - 8012D24C - 			- red pulse
-0x98 - 8012D278 - 			- sleep
-0x9C - 8012D2A8 - 			- Mario/Luigi fire ball
-0xA0 - 8012D2D4 - 			- ? Yellow flicker
-0xA4 - 8012D3B8 - 			- fox down special
-0xA8 - 8012D3D8 - 			- Fox up special start
-0xAC - 8012D454 - 			- Fox up special middle, shield break?
-0xB0 - 8012D480 - 			- Link up special
-0xB4 - 8012D380 - 			- Samus USP
-0xB8 - 8012D35C - 			- ? nothing 4
-0xBC - 8012D360 - 			- samus shoot, fox shoot (change light angle)
-0xC0 - 8012D310 - 			- one faded yellow pulse
-0xC4 - 8012D338 - 			- one yellow pulse
-0xC8 - 8012D4B4 - 			- Falcon Punch begin
-0xCC - 8012D504 - 			- kirby down special rock
-0xD0 - 8012D52C - 			- unknown white 1
-0xD4 - 8012D554 - 			- unknown white 2
-0xD8 - 8012D57C - 			- Kirby down special begin
-0xDC - 8012D5F8 - 			- Kirby down special end
-0xE0 - 8012D674 - 			- pikachu forward/down air
-0xE4 - 8012D6AC - 			- pikachu usp begin
-0xE8 - 8012D6D0 - 			- pikachu usp warp
-0xEC - 8012D6EC - 			- pikachu neutral special
-0xF0 - 8012D734 - 			- pikachu down special hit user
-0xF4 - 8012D78C - 			- pikachu down special end
-0xF8 - 8012D7B4 - 			- Falcon up special
-0xFC - 8012D7E0 - 			- Ness Absorb begin
-0x100 - 8012D800 -			-  Ness Absorb Absorb
-0x104 - 8012D834 -			-  PK Thunder begin
-0x108 - 8012D86C -			-  PK Thunder connect
-0x10C - 8012D8CC -			-  ? black overlay (challenger approaching?) 
-0x110 - 8012D8EC -			-  ? transparent black overlay
-0x114 - 8012D904 -			-  ? explosion gfx
-0x118 - 8012D920 -			-  ? smoke gfx
-0x11C - 8012D940 -			-  ? slow fade to red
-0x120 - 8012D968 -			-  ? fast fade from red
-0x124 - 8012D9B8 -			-  Hammer loop
-0x128 - 8012D9E0 -			-  Power Star
-0x12C - 8012DA70 -			-  star rod smash
-0x130 - 8012DA8C -			-  bat smash
-0x134 - 8012DAC8 -			-  bob-omb flash before explode
-0x138 - 8012DAF8 -			-  hammer end
-0x13C - 8012DB18 -			-  Link Bomb
-0x140 - 8012D9A0 -			-  set to black
-0x144 - 8012DB48 -			-  KO
-0x148 - 8012DB70 -			-  damaged high
-0x14C - 8012DB88 -			-  explosion (bob-omb)
-0x150 - 8012DBA0 -			-  damage when samus fully charge shot connects?
-0x154 - 8012DBB8 -			- ? icy blue 2
+0x28 - 8012CBDC - bounce on wall, leave spawn platform
+0x2C - 8012CC10 - spawn, white pulse
+0x30 - 8012CC80 - fire weakest (flower)
+0x34 - 8012CCC4 - fire weak (samus bomb)
+0x38 - 8012CD08 - fire 3
+0x3C - 8012CD4C - fire strong (flower thrown)
+0x40 - 8012CDB4 - electric 1
+0x44 - 8012CDD8 - electric 2
+0x48 - 8012CDFC - electric 3
+0x4C - 8012CE20 - electric 4
+0x50 - 8012CE70 - electric skeleton weakest
+0x54 - 8012CEB4 - electric skeleton weak
+0x58 - 8012CEF8 - electric skeleton med
+0x5C - 8012CF3C - electric skeleton strong
+0x60 - 8012D0EC - electric 5
+0x64 - 8012D130 - electric skeleton 5
+0x68 - 8012D174 - electric skeleton 6
+0x6C - 8012D1B8 - electric skeleton 7
+0x70 - 8012CFAC - electric skeleton 5
+0x74 - 8012CFF0 - electric skeleton 6
+0x78 - 8012D034 - electric skeleton 7
+0x7C - 8012D078 - electric skeleton 8
+0x80 - 8012D1FC - overlay blue, then white, clear
+0x84 - 8012D218 - ? nothing 1
+0x88 - 8012D21C - ? nothing 2
+0x8C - 8012D220 - ? nothing 3
+0x90 - 8012D224 - shield break
+0x94 - 8012D24C - red pulse
+0x98 - 8012D278 - sleep
+0x9C - 8012D2A8 - Mario/Luigi fire ball
+0xA0 - 8012D2D4 - ? Yellow flicker
+0xA4 - 8012D3B8 - fox down special
+0xA8 - 8012D3D8 - Fox up special start
+0xAC - 8012D454 - Fox up special middle, shield break?
+0xB0 - 8012D480 - Link up special
+0xB4 - 8012D380 - Samus USP
+0xB8 - 8012D35C - ? nothing 4
+0xBC - 8012D360 - samus shoot, fox shoot (change light angle)
+0xC0 - 8012D310 - one faded yellow pulse
+0xC4 - 8012D338 - one yellow pulse
+0xC8 - 8012D4B4 - Falcon Punch begin
+0xCC - 8012D504 - kirby down special rock
+0xD0 - 8012D52C - unknown white 1
+0xD4 - 8012D554 - unknown white 2
+0xD8 - 8012D57C - Kirby down special begin
+0xDC - 8012D5F8 - Kirby down special end
+0xE0 - 8012D674 - pikachu forward/down air
+0xE4 - 8012D6AC - pikachu usp begin
+0xE8 - 8012D6D0 - pikachu usp warp
+0xEC - 8012D6EC - pikachu neutral special
+0xF0 - 8012D734 - pikachu down special hit user
+0xF4 - 8012D78C - pikachu down special end
+0xF8 - 8012D7B4 - Falcon up special
+0xFC - 8012D7E0 - Ness Absorb begin
+0x100 - 8012D800 - Ness Absorb Absorb
+0x104 - 8012D834 - PK Thunder begin
+0x108 - 8012D86C - PK Thunder connect
+0x10C - 8012D8CC - ? black overlay (challenger approaching?) 
+0x110 - 8012D8EC - ? transparent black overlay
+0x114 - 8012D904 - ? explosion gfx
+0x118 - 8012D920 - ? smoke gfx
+0x11C - 8012D940 - ? slow fade to red
+0x120 - 8012D968 - ? fast fade from red
+0x124 - 8012D9B8 - Hammer loop
+0x128 - 8012D9E0 - Power Star
+0x12C - 8012DA70 - star rod smash
+0x130 - 8012DA8C - bat smash
+0x134 - 8012DAC8 - bob-omb flash before explode
+0x138 - 8012DAF8 - hammer end
+0x13C - 8012DB18 - Link Bomb
+0x140 - 8012D9A0 - set to black
+0x144 - 8012DB48 - KO
+0x148 - 8012DB70 - damaged high
+0x14C - 8012DB88 - explosion (bob-omb)
+0x150 - 8012DBA0 - damage when samus fully charge shot connects?
+0x154 - 8012DBB8 - icy blue 2
