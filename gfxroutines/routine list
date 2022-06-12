@@ -1,3 +1,6 @@
+player color gfx table @ 0x8012DBD8
+Moveset command B0XX0000 calls a graphics command which affects blend colour, creates fire and skeleton effects.
+
 command, routine, priority, description
 0x00 - na
 0x04 - 8012CA90 - 01 		- overlay white then fade out
