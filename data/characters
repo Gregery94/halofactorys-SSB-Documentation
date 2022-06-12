@@ -1,3 +1,9 @@
+characters screen struct
+801365F8
+
+load the character?
+0x8013369C
+
 0x8013369C - Change character on Characters Screen
 	0x801336AC - set series logo
 	0x801336CC - set character name 
