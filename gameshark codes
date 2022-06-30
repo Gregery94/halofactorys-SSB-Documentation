@@ -1,24 +1,28 @@
 CAMERA
   prevent v.s. pause cam from zooming out if the paused player is out of bounds
-  8010CAD7 0000
+    8010CAD7 0000
 
 3D
   psx vertex snapping (makes 3d geometry/ camera less precise)
-  8012EB88 0038
-  8012EB89 0000
+    8012EB88 0038
+    8012EB89 0000
 
-  drunk mode (just 0x3E in vertex transform)
-  8003B78F 000F
+  drunk mode (more 3d matrix transforms here too)
+    8003B78F 000F
   
-2D EFFECTS
+REMOVE 2D EFFECTS
   disable smoke effects and other particles
   801313C7 0000
- 
+
+CONTROLLER
+  stick jump on steroids
+    810E1478 0000
+    810E148C 0000
+
 MISC 
   Fox's crappy reflector (always breaks)
-  810E320C 0000
-  810E320E 0000
-
+    810E320C 0000
+    810E320E 0000
 
 
 UNSTABLE
