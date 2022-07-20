@@ -17,10 +17,10 @@ Below each camera subroutine is  described.
 		 - Cam stays frozen
 		 - Used during master hand's intro 
 
-	0x0C - Tracking Camera (0x8010CB48, USA)
+	0x0C - Mushroom Kingdom Camera (0x8010CB48, USA)
 		 - Cam will pan + track its targets as if it were on a dolly.
 		 - Otherwise similar to the "VS" Camera
-		 - Unsure where used
+		 - Is this used anywhere else?
 
 	0x10 - Long Shot Camera (0x8010CCC0, USA)
 		 - This camera will move back and show the entire stage.
@@ -40,4 +40,4 @@ Below each camera subroutine is  described.
 	0x18 - Planet Zebes Camera (0x8010C8C4, USA)
 		 - The Camera is positioned from a high place looking down at the players
 		 - Possibly used for screen shake effect
-		 - Used on planet Zebes stage
+		 - Is this used anywhere else?
