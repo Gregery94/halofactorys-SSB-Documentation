@@ -1,8 +1,7 @@
-quickly looked at these. They're just my best guess.
-
-my notes indicate that 0x80131CBC reads from this table
-
+Not totally accurate but close enough
+---
 cpu input table @ 80188340
+---
 80188130 - Idle
 80188138 - Walk
 8018813C - Turnaround
