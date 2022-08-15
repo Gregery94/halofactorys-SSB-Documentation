@@ -1,0 +1,25 @@
+---
+asm 0x80133790 writes attack_index to sp
+
+
+asm 0x80133B30 gets attack_index offset
+  s2 = AI_Behaviour_Table
+
+
+// 0x1C in length
+AI_Behaviour_Entry {
+	u32 attack_index		      // = (value + 5) = index entry @ 0x8018BCA0.
+	u32 unknown_number_2		  // = gets converted to float?
+	u32 unknown_number_3	    // = ?
+	f32 unknown_float_1     	// = -230.0
+	f32 unknown_float_2     	// =  230.0
+	f32 unknown_float_3     	// = -54.0
+	f32 unknown_float_4     	// =  406.0 (0x801336E4 loads from sp)
+
+}
+
+Aerial attack behaviours start at 0x150
+
+---
+computer taunt 0x80137754
+---
