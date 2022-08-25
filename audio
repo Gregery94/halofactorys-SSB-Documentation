@@ -1,0 +1,6 @@
+8003CB34 - audio buffer sizes? [u16, u16, u16, null]
+8003CB30 - audio buffer offset?
+
+0x8003D318 - midi speed - f32
+0x8003D31C - midi channel-enabled bitflags
+
