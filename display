@@ -3,8 +3,11 @@ RANDOM BITS
 	// this function handles the current DL being processed? 0x80004AB0
 	routine 80017B80 handles 3d drawing? 
 	CSS screen object ptr = 0x80046730
-	@ 0x8003BB00 this value seems to affect global zoom 
+	@ 0x8003C2B4 global zoom ? (loaded from asm @ 8001B2D4)
+	global zoom 2 asm = 8001B298
 	@ 0x8003CB34 = some buffer value?
+
+        global 2d gfx scaling 8003B914
 
 
 GLOBAL VERTEX MATRIX (static) @ 0x8003B758
