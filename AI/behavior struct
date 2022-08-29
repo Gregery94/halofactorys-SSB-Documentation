@@ -1,25 +1,43 @@
 ---
 asm 0x80133790 writes attack_index to sp
 
-
 asm 0x80133B30 gets attack_index offset
   s2 = AI_Behaviour_Table
 
+each attack in a characters behaviour table has 3 ints and 4 floats
 
-// 0x1C in length
-AI_Behaviour_Entry {
-	u32 attack_index		      // = (value + 5) = index entry @ 0x8018BCA0.
-	u32 unknown_number_2		  // = gets converted to float?
-	u32 unknown_number_3	    // = ?
-	f32 unknown_float_1     	// = -230.0
-	f32 unknown_float_2     	// =  230.0
-	f32 unknown_float_3     	// = -54.0
-	f32 unknown_float_4     	// =  406.0 (0x801336E4 loads from sp)
-
+Falcon jab struct: { 
+    attack_index: 0x13    // determines the attack
+    active_frame: 0x5     // first frame so the cpu knows when to use the attack
+    end_hitboxes: 0x8     // I don't think this is used
+    float_1:      25.0    // floats probably related to distance
+    float_2:      495.0   // floats probably related to distance
+    float_3:      280.0   // floats probably related to distance
+    float_4:      510.0   // floats probably related to distance
 }
 
-Aerial attack behaviours start at 0x150
+grounded table (Falcon)
+jab       00000013 00000005 00000008 41C80000 43F78000 438C0000 43FF0000
+ftilt     00000005 00000009 0000000F 41A00000 440E8000 43870000 44020000
+fsmash    00000015 00000010 00000017 437A0000 44924000 43610000 44138000 
+utilt     00000017 00000008 00000017 C3C58000 442F0000 C2AA0000 446EC000
+usmash    00000019 00000004 0000000B C2E60000 43E60000 42A00000 447A0000
+dtilt     00000020 00000008 0000000F C2BE0000 44070000 C3340000 43820000
+dsmash    00000022 00000009 00000017 C41D8000 44278000 C3820000 43960000
+NSP       00000009 0000002A 0000002E 43480000 4482A000 42C80000 43DC0000
+USP       0000000D 0000000D 0000002C 42B40000 440D4000 42FA0000 44F82000
+DSP       0000001B 0000000C 00000027 C1200000 44D70000 43A00000 00000000
+grab      0000001C 00000007 00000007 432A0000 43EB0000 430C0000 43DC0000
+end       FFFFFFFF 00000000 00000000 00000000 00000000 00000000 00000000
 
----
-computer taunt 0x80137754
----
+Aerial Table (Falcon)
+nair      00000013 00000004 0000001B C3100000 439B8000 42EE0000 43CB8000
+fair/bair 00000015 00000007 00000012 C41D4000 C2A20000 42EC0000 44054000
+uair      00000019 00000005 0000000D C4170000 440E0000 43000000 4489E000
+dair      00000022 00000008 00000019 C3790000 43400000 C3160000 43D50000
+NSP       00000009 0000002A 0000002E 43210000 4456C000 42C80000 43DD0000
+USP       0000000D 0000000D 0000002C 42B20000 440E8000 42F60000 43D38000
+DSP       0000001B 0000000C 0000001E C3770000 43848000 C30B0000 44010000
+end       FFFFFFFF 00000000 00000000 00000000 00000000 00000000 00000000
+
+
