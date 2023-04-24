@@ -8,7 +8,11 @@ RANDOM BITS
 	@ 0x8003CB34 = some buffer value?
 
         global 2d gfx scaling 8003B914
-
+	
+	
+	camera FOV (in game) 8003BB00
+	camera FOV (pause) 8003BAA0
+		
 
 GLOBAL VERTEX MATRIX (static) @ 0x8003B758
 	- Another vertex matrix can be found below the camera object in ram.
